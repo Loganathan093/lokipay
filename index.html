@@ -71,7 +71,7 @@
     function pay(){
         var inp = document.getElementById("cc").value;
         var price = document.getElementById("rs");
-        if(inp === "keerthi eruma maadu"){
+        
             num.textContent = "Success";
             document.getElementById("cc").value = "";
             form.classList.add("dis");
@@ -79,12 +79,6 @@
                 num.classList.add("dis");
                 price.classList.remove("dis");
             }, 1000);
-            
-
-        }
-        else{
-            num.textContent = 'Please enter "keerthi eruma maadu"'
-        }
     }
 
 

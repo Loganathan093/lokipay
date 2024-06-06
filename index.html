@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loki | Pay</title>
+    <link rel="icon" type="image/x-icon" href="ghost.jpg">
+    <style>
+        body
+        {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 90vh;
+
+        }
+        .dis
+        {
+            display: none;
+        }
+        input
+        {
+            outline: transparent;
+        }
+        #sm
+        {
+            background-color: #17A589;
+            font-size: x-large;
+            border: 0;
+            color: white;
+            border-radius: 20px;
+        }
+        #sm:active
+        {
+            transform: translateY(4px);
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <center>
+            <p id="n" style="color: #17A589; font-size:xx-large; width: 400px;">5</p>
+            <p id="rs" class="dis" style="color: #17A589; font-size:xx-large; width: 400px;"><span style="text-decoration: line-through;">600 </span>500 only</p>
+        </center>
+        <div id="form" class="dis">
+            <input type="text" id="cc" required style="font-size: larger; height: 40px; width: 400px;"><br>
+            <center>
+                <input type="submit" id="sm" onclick="pay()" style="margin-top: 10px; height: 40px; width: 100px;">
+            </center>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    var num = document.getElementById("n");
+    var form = document.getElementById("form");
+    var price = document.getElementById("rs").textContent;
+    
+    var val = 5;
+    var countdown = setInterval(() => {
+        val--;
+        num.textContent = val;
+        if(val === 0){
+            clearInterval(countdown)
+            num.textContent = "Please enter coupon code given to you"
+            form.classList.remove("dis")
+        }
+    }, 1000);
+
+    
+    function pay(){
+        var inp = document.getElementById("cc").value;
+        var price = document.getElementById("rs");
+        if(inp === "keerthi eruma maadu"){
+            num.textContent = "Success";
+            document.getElementById("cc").value = "";
+            form.classList.add("dis");
+            setInterval(() => {
+                num.classList.add("dis");
+                price.classList.remove("dis");
+            }, 1000);
+            
+
+        }
+        else{
+            num.textContent = 'Please enter "keerthi eruma maadu"'
+        }
+    }
+
+
+</script>

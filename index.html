@@ -74,9 +74,9 @@
 
     document.getElementById("form").addEventListener("submit", function(event){
         event.preventDefault();
-        var inp = document.getElementById("cc").value;
+        var inp = document.getElementById("cc").value.trim();
         var price = document.getElementById("rs");
-            if(inp == "keerthi"){
+            if(inp.toLowerCase() == "keerthi"){
             num.textContent = "Coupon Code Applied";
             document.getElementById("cc").value = "";
             form.classList.add("dis");

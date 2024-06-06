@@ -40,7 +40,7 @@
     <div class="main">
         <center>
             <p id="n" style="color: #17A589; font-size:xx-large; width: 400px;">5</p>
-            <p id="rs" class="dis" style="color: #17A589; font-size:xx-large; width: 400px;"><span style="text-decoration: line-through;">600 </span>500 only</p>
+            <p id="rs" class="dis" style="color: #17A589; font-size:xx-large; width: 400px;">Final Price <span style="text-decoration: line-through;">600 </span>500 only</p>
         </center>
         <div id="form" class="dis">
             <input type="text" id="cc" autocomplete = "off" required style="font-size: larger; height: 40px; width: 400px;"><br>
@@ -71,7 +71,7 @@
     function pay(){
         var inp = document.getElementById("cc").value;
         var price = document.getElementById("rs");
-        
+            if(inp === "keerthi"){
             num.textContent = "Success";
             document.getElementById("cc").value = "";
             form.classList.add("dis");
@@ -79,6 +79,10 @@
                 num.classList.add("dis");
                 price.classList.remove("dis");
             }, 1000);
+        }
+        else{
+            num.textContent = 'Please enter "keerthi" eruma maadu'
+        }
     }
 
 

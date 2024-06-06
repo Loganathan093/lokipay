@@ -18,7 +18,7 @@ var num = document.getElementById("n");
         var inp = document.getElementById("cc").value;
         var price = document.getElementById("rs");
             if(inp == "keerthi"){
-            num.textContent = "Success";
+            num.textContent = "Coupon Code Applied :)";
             document.getElementById("cc").value = "";
             form.classList.add("dis");
             setInterval(() => {

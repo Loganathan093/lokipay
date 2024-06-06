@@ -16,7 +16,7 @@ var num = document.getElementById("n");
     document.getElementById("btn").addEventListener("click", function(){
         var inp = document.getElementById("cc").value;
         var price = document.getElementById("rs");
-            if(inp == "keerthi"){
+        
             num.textContent = "Coupon Code Applied";
             document.getElementById("cc").value = "";
             form.classList.add("dis");
@@ -24,10 +24,7 @@ var num = document.getElementById("n");
                 num.classList.add("dis");
                 price.classList.remove("dis");
             }, 1000);
-        }
-        else{
-            num.textContent = 'Please enter "keerthi" eruma maadu'
-        }
+       
     })
     // function pay(){
     //     var inp = document.getElementById("cc").value;

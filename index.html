@@ -22,7 +22,7 @@
         {
             outline: transparent;
         }
-       #btn
+        #btn
         {
             background-color: #17A589;
             font-size:large;
@@ -41,15 +41,54 @@
     <div class="main">
         <center>
             <p id="n" style="color: #17A589; font-size:xx-large; width: 400px;">5</p>
-            <p id="rs" class="dis" style="color: #17A589; font-size:xx-large; width: 400px;">Final Price <span style="text-decoration: line-through;">600 </span>500 only</p>
+            <p id="rs" class="dis" style="color: #17A589; font-size:xx-large; width: 400px;">Final Price - Rs <span style="text-decoration: line-through;">600 </span>500 only</p>
         </center>
         <div id="form" class="dis">
-            <input type="text" id="cc" autocomplete = "off" required style="font-size: larger; height: 40px; width: 400px;"><br>
+            <form id="form" action="#" method="post">
+                <input type="text" autocomplete="off" placeholder="Enter Coupon Code" id="cc" required style="font-size: larger; height: 40px; width: 400px;"><br>
             <center>
-                <button id="btn" style="margin-top: 10px; height: 40px; width: 100px;">SUBMIT</button>
+                <button id="btn" type="submit" style="margin-top: 10px; height: 40px; width: 100px; ">SUBMIT</button>
             </center>
+            </form>
         </div>
     </div>
 </body>
 </html>
-<script src = "script.js"></script>
+<script>
+
+    
+    var num = document.getElementById("n");
+    var form = document.getElementById("form");
+    var price = document.getElementById("rs").textContent;
+    
+    var val = 5;
+    var countdown = setInterval(() => {
+        val--;
+        num.textContent = val;
+        if(val === 0){
+            clearInterval(countdown)
+            num.textContent = "Please enter coupon code given to you"
+            form.classList.remove("dis")
+        }
+    }, 1000);
+
+    document.getElementById("form").addEventListener("click", function(){
+        var inp = document.getElementById("cc").value;
+        var price = document.getElementById("rs");
+            if(inp == "keerthi"){
+            num.textContent = "Coupon Code Applied";
+            document.getElementById("cc").value = "";
+            form.classList.add("dis");
+            setInterval(() => {
+                num.classList.add("dis");
+                price.classList.remove("dis");
+            }, 2000);
+        }
+        else{
+            num.textContent = 'Please enter "keerthi" eruma maadu'
+        }
+    })
+  
+
+
+</script>
